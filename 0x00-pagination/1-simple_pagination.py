@@ -5,7 +5,6 @@ Simple helper function
 
 import csv
 from typing import List
-from typing import Union
 from typing import Tuple
 
 
