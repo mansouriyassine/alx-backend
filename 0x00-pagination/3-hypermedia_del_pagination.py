@@ -14,11 +14,9 @@ class Server:
     """
     DATA_FILE = "Popular_Baby_Names.csv"
 
-
     def __init__(self):
         self.__dataset = None
         self.__indexed_dataset = None
-
 
     def dataset(self) -> List[List]:
         """Cached dataset
@@ -31,7 +29,6 @@ class Server:
 
         return self.__dataset
 
-
     def indexed_dataset(self) -> Dict[int, List]:
         """Dataset indexed by sorting position, starting at 0
         """
@@ -43,9 +40,13 @@ class Server:
             }
         return self.__indexed_dataset
 
-
-    def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
-        """Return hypermedia pagination details for the given index and page size.
+    def get_hyper_index(
+        self,
+        index: int = None,
+        page_size: int = 10
+    ) -> Dict:
+        """Return hypermedia pagination details for
+        the given index and page size.
 
         Args:
             index (int): The start index of the current page.
@@ -54,17 +55,21 @@ class Server:
         Returns:
             dict: A dictionary containing pagination details.
         """
-        assert index is None or (isinstance(index, int) and index >= 0),
-        assert isinstance(page_size, int) and page_size > 0,
+        assert index is None or (isinstance(index, int) and index >= 0)
+        assert isinstance(page_size, int) and page_size > 0
 
         dataset_length = len(self.indexed_dataset())
         if index is None:
             index = 0
         else:
-            assert index < dataset_length,
+            assert index < dataset_length, "Index out of range"
 
         next_index = min(index + page_size, dataset_length)
-        data = [self.indexed_dataset()[i] for i in range(index, next_index)]
+        data = []
+        for i in range(index, next_index):
+            while i not in self.indexed_dataset():
+                i += 1
+            data.append(self.indexed_dataset()[i])
 
         return {
             'index': index,
