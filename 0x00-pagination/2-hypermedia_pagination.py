@@ -47,7 +47,6 @@ class Server:
 
         return self.__dataset
 
-
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """Return the appropriate page of the dataset
         based on pagination parameters.
@@ -73,12 +72,11 @@ class Server:
 
         return self.dataset()[start_index:end_index]
 
-
-    def get_hyper
-    (self,
-     page: int = 1,
-     page_size: int = 10
-     ) -> Dict[str, Union[int, List[List], None]]:
+    def get_hyper(
+        self,
+        page: int = 1,
+        page_size: int = 10
+    ) -> Dict[str, Union[int, List[List], None]]:
         """Return hypermedia pagination details for the
         given page and page size.
 
