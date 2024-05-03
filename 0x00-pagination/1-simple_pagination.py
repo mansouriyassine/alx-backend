@@ -45,19 +45,19 @@ class Server:
 
         return self.__dataset
 
-
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        """Return the appropriate page of the dataset based on pagination parameters.
+        """Return the appropriate page of the dataset based
+        on pagination parameters.
 
         Args:
             page (int): The page number (1-indexed).
             page_size (int): The number of items per page.
 
         Returns:
-            List[List]: The paginated dataset for the given page and page size.
+            List[List]: The paginated dataset for the given page and page size
         """
-        assert isinstance(page, int) and page > 0, "Page must be a positive integer"
-        assert isinstance(page_size, int) and page_size > 0, "Page size must be a positive integer"
+        assert isinstance(page, int) and page > 0,
+        assert isinstance(page_size, int) and page_size > 0,
 
         start_index, end_index = index_range(page, page_size)
         dataset_length = len(self.dataset())
