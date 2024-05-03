@@ -55,8 +55,8 @@ class Server:
         Returns:
             List[List]: The paginated dataset for the given page and page size
         """
-        assert isinstance(page, int) and page > 0, "Page must be a positive integer"
-        assert isinstance(page_size, int) and page_size > 0, "Page size must be a positive integer"
+        assert isinstance(page, int) and page > 0,
+        assert isinstance(page_size, int) and page_size > 0,
 
         start_index, end_index = index_range(page, page_size)
         dataset_length = len(self.dataset())
