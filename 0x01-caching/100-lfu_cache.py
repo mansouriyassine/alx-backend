@@ -24,7 +24,7 @@ class LFUCache(BaseCaching):
                     ]
                     lru_key = min(
                         lfu_keys,
-                        key=lambda k: self.usage_order.index(k)
+                        key=lambda k: self.usage_frequency[k]
                     )
                     del self.cache_data[lru_key]
                     del self.usage_frequency[lru_key]
