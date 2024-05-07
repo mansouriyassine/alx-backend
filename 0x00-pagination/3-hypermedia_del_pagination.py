@@ -4,7 +4,9 @@ Deletion-resilient hypermedia pagination
 """
 
 import csv
-from typing import List, Dict
+from typing import List
+from typing import Dict
+from typing import Union
 
 
 class Server:
