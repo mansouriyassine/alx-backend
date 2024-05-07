@@ -4,7 +4,9 @@ Deletion-resilient hypermedia pagination
 """
 
 import csv
-from typing import List, Dict
+from typing import List
+from typing import Dict
+from typing import Union
 
 
 class Server:
@@ -47,10 +49,8 @@ class Server:
         the given index and page size.
 
         Args:
-            index (int, optional): The start index of the current page.
-            Defaults to None.
-            page_size (int, optional): The number of items per page.
-            Defaults to 10.
+            index (int): The start index of the current page.
+            page_size (int): The number of items per page.
 
         Returns:
             dict: A dictionary containing pagination details.
