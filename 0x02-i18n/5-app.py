@@ -3,7 +3,8 @@
 5-app Module
 
 Flask app with Babel setup, locale selection,
-template parametrization, URL parameter locale support, and user login emulation.
+template parametrization, URL parameter locale support,
+and user login emulation.
 """
 
 from flask import Flask, render_template, request, g
