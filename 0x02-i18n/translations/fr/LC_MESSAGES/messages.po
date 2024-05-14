@@ -20,9 +20,9 @@ msgstr ""
 
 #: 3-app.py:30 templates/3-index.html:6
 msgid "home_title"
-msgstr ""
+msgstr "Bienvenue chez Holberton"
 
 #: 3-app.py:31 templates/3-index.html:9
 msgid "home_header"
-msgstr ""
+msgstr "Bonjour monde!"
 
